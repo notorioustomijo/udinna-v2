@@ -1,0 +1,366 @@
+.projectHero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 5rem 2rem;
+}
+
+.projectHeroImg {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.projectHero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+.projectContext {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 6.25rem;
+  padding: 2.5rem 2rem;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 30%;
+}
+
+.projectBlurb {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.projectSubTitle {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1.5;
+  color: #050505;
+}
+
+.projectBlurbText {
+  font-size: 1rem;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  color: #8D8D8D;
+}
+
+.projectOverview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.projectOverview h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.projectSubsection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.subtitleDesc {
+  color: #1e1e1e;
+  line-height: 1.6;
+}
+
+.projectSubsection ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+.projectSubsection li {
+  color: #1e1e1e;
+  line-height: 1.6;
+}
+
+/* Grid Layout - 12 column system for flexible sizing */
+.projectImagesGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  grid-auto-rows: 1fr;
+}
+
+.projectImageWrapper {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+}
+
+/* Full width - takes up entire row */
+.projectImageWrapper.full {
+  grid-column: span 12;
+}
+
+/* Half width - 50/50 split */
+.projectImageWrapper.half {
+  grid-column: span 6;
+}
+
+/* Small - takes up 5 columns (41.67%) */
+.projectImageWrapper.small {
+  grid-column: span 5;
+}
+
+/* Large - takes up 7 columns (58.33%) */
+.projectImageWrapper.large {
+  grid-column: span 7;
+}
+
+/* Smaller - takes up 4 columns (33.33%) */
+.projectImageWrapper.smaller {
+  grid-column: span 4;
+}
+
+/* Larger - takes up 8 columns (66.67%) */
+.projectImageWrapper.larger {
+  grid-column: span 8;
+}
+
+.projectImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.projectTestimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 4rem 6.25rem;
+  gap: 1.5rem;
+}
+
+.testimonialText {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: "Albra Text";
+  width: 60%;
+  color: #1e1e1e;
+}
+
+.testimonialClient {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nextProjectBtnContainer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nextProjectBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 75%;
+  padding: 1.5rem 2.5rem;
+  font-size: 2.5rem;
+  font-family: "Albra Text";
+  font-weight: 600;
+  color: #1a1a1a;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nextProjectBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #1a1a1a;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.nextProjectBtn:hover::before {
+  width: 100%;
+}
+
+.nextProjectBtn:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nextProjectBtnText {
+  position: relative;
+  z-index: 2;
+}
+
+.nextProjectArrowWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+
+.arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.arrow-1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.arrow-2 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.nextProjectBtn:hover .arrow-1 {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.nextProjectBtn:hover .arrow-2 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Tablet and below */
+@media (max-width: 968px) {
+  .projectHero {
+      padding: 4rem 1.5rem;
+      gap: 2rem;
+  }
+
+  .projectContext {
+      gap: 3rem;
+      padding: 2rem 1.5rem;
+  }
+
+  .projectInfo {
+      width: 40%;
+  }
+
+  .projectImagesGrid {
+      gap: 20px;
+      padding: 2rem 1.5rem;
+  }
+
+  .testimonialText {
+    width: 95%;
+  }
+}
+
+/* Mobile - Hide projectInfo */
+@media (max-width: 768px) {
+  .projectHero {
+      padding: 3rem 1rem;
+      gap: 1.5rem;
+  }
+
+  .projectContext {
+      flex-direction: column;
+      gap: 0;
+      padding: 2rem 1rem;
+  }
+
+  .projectInfo {
+      display: none;
+  }
+
+  .projectOverview {
+      width: 100%;
+  }
+
+  .projectImagesGrid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+  }
+
+  .projectImageWrapper.half,
+  .projectImageWrapper.full,
+  .projectImageWrapper.small,
+  .projectImageWrapper.large,
+  .projectImageWrapper.smaller,
+  .projectImageWrapper.larger {
+      grid-column: span 1;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .projectHero {
+      padding: 2rem 1rem;
+  }
+
+  .projectContext {
+      padding: 1.5rem 1rem;
+  }
+
+  .projectImagesGrid {
+      padding: 1.5rem 1rem;
+      gap: 1rem;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .projectImageWrapper {
+      animation: fadeIn 0.3s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+}
