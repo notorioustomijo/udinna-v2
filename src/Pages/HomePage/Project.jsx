@@ -10,7 +10,7 @@ import frutta from '../../assets/frutta.webp';
 import healthbanc from '../../assets/healthbanc.webp';
 import landgal from '../../assets/landgirl.webp';
 import delightvet from '../../assets/delightvet.webp';
-// import style from './Project.module.css';
+import style from './HomeProject.module.css';
 
 export default function Project() {
     const sectionRef = useRef(null);
