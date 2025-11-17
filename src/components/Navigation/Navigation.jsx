@@ -224,7 +224,6 @@ export default function Navigation() {
                         <a 
                             href="/portfolio"
                             className={style.navLink}
-                            onClick={(e) => handleNavClick(e, 'portfolio')}
                         >
                             Portfolio
                         </a>
@@ -285,7 +284,6 @@ export default function Navigation() {
                             <a 
                                 href="/portfolio"
                                 className={style.mobileNavLink}
-                                onClick={(e) => handleNavClick(e, 'portfolio')}
                             >
                                 Portfolio
                             </a>

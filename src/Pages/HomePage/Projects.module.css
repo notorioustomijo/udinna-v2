@@ -1,0 +1,282 @@
+.projectsSection {
+    position: relative;
+    padding: 7.5rem 6.25rem 7.5rem 6.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.projectsSectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+.navLink {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e1e1e;
+    transition: color 0.5s ease;
+}
+
+.navLink:hover {
+    color: #1e1e1e;
+    text-decoration: underline;
+}
+
+.nav p {
+    color: #fefefe;
+}
+
+/* Grid Layout - 12 column system for flexible sizing */
+.projectImagesGrid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    padding: 2.5rem 0rem;
+    width: 100%;
+    grid-auto-rows: 1fr;
+}
+
+.projectImageWrapper {
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 18.75rem;
+    max-height: 38rem;
+}
+
+.projectImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.projectImageWrapper:hover .projectImg {
+    transform: scale(1.05);
+}
+
+/* Overlay styles */
+.imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* align-items: start; */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 8px;
+    background: linear-gradient(
+        180deg, 
+        rgba(141, 141, 141, 0.1) 0%, 
+        rgba(39, 39, 39, 0.8) 100%
+    );
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.projectImageWrapper:hover .imageOverlay {
+    opacity: 1;
+}
+
+.overlayContent {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    color: #fff;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.projectImageWrapper:hover .overlayContent {
+    transform: translateY(0);
+}
+
+.tagContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.tag {
+    padding: 0.5rem;
+    background: rgba(238, 238, 238, 0.8);
+    align-self: start;
+    border-radius: 0.25rem;
+}
+
+.tag p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: rgba(30, 30, 30, 1);
+}
+
+.projectDesc {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.projectDesc h3 {
+    margin: 0;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 700;
+    color: #fff;
+}
+
+.projectDesc p {
+    margin: 0;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Full width - takes up entire row */
+.projectImageWrapper.full {
+    grid-column: span 12;
+}
+
+/* Half width - 50/50 split */
+.projectImageWrapper.half {
+    grid-column: span 6;
+}
+
+/* Small - takes up 5 columns (41.67%) */
+.projectImageWrapper.small {
+    grid-column: span 5;
+}
+
+/* Large - takes up 7 columns (58.33%) */
+.projectImageWrapper.large {
+    grid-column: span 7;
+}
+
+/* Smaller - takes up 4 columns (33.33%) */
+.projectImageWrapper.smaller {
+    grid-column: span 4;
+}
+
+/* Larger - takes up 8 columns (66.67%) */
+.projectImageWrapper.larger {
+    grid-column: span 8;
+}
+
+/* Tablet and below */
+@media (max-width: 968px) {
+    .projectsSection {
+        padding: 5rem 3rem 5rem 3rem;
+    }
+
+    .projectImagesGrid {
+        gap: 20px;
+        padding: 2rem 1.5rem;
+    }
+
+    .overlayContent {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projectsSection {
+        padding: 4rem 2rem 4rem 2rem;
+    }
+
+    .projectImagesGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .projectImageWrapper.half,
+    .projectImageWrapper.full,
+    .projectImageWrapper.small,
+    .projectImageWrapper.large,
+    .projectImageWrapper.smaller,
+    .projectImageWrapper.larger {
+        grid-column: span 1;
+    }
+
+    .projectImageWrapper {
+        min-height: 250px;
+    }
+
+    /* Show overlay by default on mobile (no hover) */
+    .imageOverlay {
+        opacity: 1;
+        background: linear-gradient(
+            180deg, 
+            transparent 0%, 
+            rgba(39, 39, 39, 0.9) 70%
+        );
+    }
+
+    .overlayContent {
+        transform: translateY(0);
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .projectsSection {
+        padding: 3rem 1rem 3rem 1rem;
+    }
+
+    .projectImagesGrid {
+        padding: 1.5rem 0rem;
+        gap: 1rem;
+    }
+
+    .overlayContent {
+        padding: 1rem;
+    }
+
+    .tag p {
+        font-size: 0.625rem;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .projectImageWrapper {
+        animation: fadeIn 0.3s ease-out forwards;
+    }
+
+    .projectImg,
+    .imageOverlay,
+    .overlayContent {
+        transition: none;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+}

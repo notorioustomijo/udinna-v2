@@ -3,55 +3,12 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    gap: 5rem;
-    padding: 2.5rem 6.25rem;
-}
-
-.trustSignal {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-/* viewport that shows ~3-4 logos */
-.brandViewport {
-    position: relative;
-    overflow: hidden;
-    width: clamp(12rem, 36vw, 34rem);
-    height: 32px;
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-}
-
-/* the moving strip */
-.brandTrack {
-    display: flex;
-    align-items: start;
-    gap: 2rem;
-    will-change: transform;
-}
-
-/* each logo */
-.brandLogo {
-    height: 28px;
-    width: auto;
-    display: block;
-    flex: 0 0 auto;
-    opacity: 0.9;
+    gap: 0.5rem;
+    padding: 0rem;
 }
 
 .heroText p {
     color: #fefefe;
-}
-
-.trustSignal p {
-    font-size: 0.875rem;
-}
-
-.trustedBrand {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 1.5rem;
 }
 
 .heroText {
@@ -62,35 +19,26 @@
     gap: 2.5rem;
     text-align: center;
     width: 50%;
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
 }
 
-.heroStrip {
+.iframeContainer {
     width: 100%;
-    overflow: hidden;
-    margin-top: 1rem;
+    background-color: #eee;
+    height: 50rem;
 }
 
-.heroTrack {
-    display: flex;
-    gap: 1rem;
-    will-change: transform;
-}
-
-.heroImage {
-    flex: 0 0 clamp(14rem, 28vw, 24rem);
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 1rem;
-    width: 30rem;
-    height: 30rem;
+.companiesSection {
+    text-align: center;
+    background-color: #eee;
+    margin-top: 0.25rem;
+    width: 100%;
+    padding: 4rem;
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
-    .heroSection {
-        padding: 2rem 3rem;
-        gap: 4rem;
-    }
     
     .heroText {
         width: 70%;
@@ -106,10 +54,6 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-    .heroSection {
-        padding: 1.5rem 1.5rem;
-        gap: 3rem;
-    }
     
     .trustSignal {
         flex-direction: column;
@@ -153,27 +97,6 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-    .heroSection {
-        padding: 1rem;
-        gap: 3rem;
-    }
-    
-    .trustSignal {
-        gap: 0.75rem;
-    }
-    
-    .trustSignal p {
-        font-size: 0.75rem;
-    }
-    
-    .brandViewport {
-        width: clamp(12rem, 85vw, 18rem);
-        height: 24px;
-    }
-    
-    .brandLogo {
-        height: 20px;
-    }
     
     .heroText h1 {
         font-size: 2rem;

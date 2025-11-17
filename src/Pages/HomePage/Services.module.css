@@ -1,0 +1,243 @@
+.serviceSection {
+    position: relative;
+    padding: 7.5rem 6.25rem 7.5rem 6.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.serviceSectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+.navLink {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e1e1e;
+    transition: color 0.5s ease;
+}
+
+.navLink:hover {
+    color: #1e1e1e;
+    text-decoration: underline;
+}
+
+.nav p {
+    color: #fefefe;
+}
+
+.serviceList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.service {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
+
+.serviceContent {
+    width: 60%;
+    height: 21.875rem;
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    border-radius: 0.5rem;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), rgba(0, 0, 0, 0.20);
+    transition: all 0.8s;
+    overflow: hidden;
+}
+
+.serviceContent h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.serviceTextContent p,
+.serviceBrands p {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+}
+
+.service:hover .serviceContent {
+    width: 100%;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.serviceTextContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.serviceBrands {
+    display: none;
+}
+
+.service:hover .serviceBrands {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.serviceBrandLogos {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.serviceBrandLogos img {
+    max-width: 60px;
+    height: auto;
+}
+
+.service:hover .serviceBrandLogos {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Tablet and smaller desktops */
+@media screen and (max-width: 1440px) {
+    .serviceSection {
+        padding: 6rem 4rem 0rem 4rem;
+    }
+
+    .serviceContent {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .serviceSection {
+        padding: 5rem 3rem 0rem 3rem;
+    }
+
+    .serviceContent {
+        width: 70%;
+        height: auto;
+        min-height: 20rem;
+    }
+}
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+    .serviceSection {
+        padding: 4rem 2rem 0rem 2rem;
+        gap: 2rem;
+    }
+
+    .serviceList {
+        gap: 1.25rem;
+    }
+
+    .serviceContent {
+        width: 75%;
+        padding: 2rem 1rem;
+    }
+
+    .serviceBrandLogos img {
+        max-width: 50px;
+    }
+}
+
+/* Small tablets and large phones */
+@media screen and (max-width: 768px) {
+    .serviceSection {
+        padding: 3rem 1.5rem 0rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .serviceSectionHeader {
+        padding-bottom: 1rem;
+    }
+
+    .serviceList {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .service {
+        min-height: 250px;
+    }
+
+    .serviceContent {
+        width: 100%;
+        height: auto;
+        min-height: 18rem;
+        padding: 1.5rem 1rem;
+    }
+
+    /* Show brands by default on mobile since hover doesn't work well */
+    .serviceBrands {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .serviceBrandLogos {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 480px) {
+    .serviceSection {
+        padding: 2rem 1rem 0rem 1rem;
+        gap: 1rem;
+    }
+
+    .serviceSectionHeader h2 {
+        font-size: 1.5rem;
+    }
+
+    .service {
+        padding: 0.75rem;
+        min-height: 200px;
+    }
+
+    .serviceContent {
+        width: 100%;
+        min-height: 16rem;
+        padding: 1.5rem 0.75rem;
+        gap: 1rem;
+    }
+
+    .serviceTextContent {
+        gap: 0.25rem;
+    }
+
+    .serviceBrandLogos {
+        gap: 0.75rem;
+    }
+
+    .serviceBrandLogos img {
+        max-width: 40px;
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 360px) {
+    .serviceSection {
+        padding: 1.5rem 0.75rem 0rem 0.75rem;
+    }
+
+    .serviceContent {
+        padding: 1rem 0.5rem;
+    }
+
+    .serviceBrandLogos img {
+        max-width: 35px;
+    }
+}

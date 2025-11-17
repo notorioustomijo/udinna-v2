@@ -9,21 +9,12 @@ import style from './About.module.css';
 
 export default function About() {
     const sectionRef = useRef(null);
-    const imgRef = useRef(null);
     const revealRef = useRef(null);
 
     const fullText="We are a Lagos-based marketing, product design, and software development firm dedicated to building bold brand identities and digital experiences, blending strategy, aesthetics, and seamless execution.";
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            // Image rise-in
-            gsap.set(imgRef.current,
-                {
-                    y: 500,
-                    opacity: 0
-                }
-            );
-
             // Count visible characters (ignores HTML tags)
             const charCount = revealRef.current.textContent.length;
             const steps = Math.min(220, Math.max(60, charCount)); //clamp for smoothness
@@ -41,13 +32,6 @@ export default function About() {
             // (Optional) tiny spacer at the start for extra delay
             tl.to({}, {duration: 0.15});
 
-            // image rise-in
-            tl.to(
-                imgRef.current,
-                { y: 0, opacity: 1, ease: "power2.out", duration: 0.6 },
-                "<"
-            );
-
             // reveal text left -> right with a width mask + caret
             tl.fromTo(
                 revealRef.current,
@@ -63,7 +47,6 @@ export default function About() {
 
     return (
         <section className={style.aboutSection} ref={sectionRef} id="what-we-do">
-            <img src={uLogo} alt="" className={style.uLogo} ref={imgRef}/>
             <p
                 className={style.aboutText}
             >

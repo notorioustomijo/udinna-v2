@@ -83,7 +83,7 @@ export default function PageName() {
                 "
                 testimonialClient="Toluwabori Onasoga"
                 testimonialClientRole="
-                CEO,Founder, Agoge Foundry
+                CEO & Founder, Agoge Foundry
                 "
                 nextProjectName="Washryte"
                 nextProjectLink="/projects/washryte"

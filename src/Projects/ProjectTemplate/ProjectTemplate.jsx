@@ -16,13 +16,13 @@ export default function PageName() {
         // - 'large': ~58% width (pair with 'small')
         // - 'smaller': ~33% width (pair with 'larger')
         // - 'larger': ~67% width (pair with 'smaller')
-
+        
     const projectImages = [
-        { src: projectImage1, size: 'large' },      // Full width hero
+        { src: projectImage1, size: 'large' },      // 58% width
         { src: projectImage2, size: 'small' },     // 42% width
-        { src: projectImage3, size: 'small' },     // 58% width
+        { src: projectImage3, size: 'small' },     // 42% width
         { src: projectImage4, size: 'large' },     // 58% width
-        { src: projectImage5, size: 'full' },     // 42% width
+        { src: projectImage5, size: 'full' },     // 100% width
         { src: projectImage6, size: 'half' },      // 50% width
         { src: projectImage7, size: 'half' },      // 50% width
         { src: projectImage8, size: 'full' },      // Full width
@@ -63,7 +63,7 @@ export default function PageName() {
                 <Add role of person giving testimonial>
                 "
                 nextProjectName="<Add name of next project to link to>"
-                nextProjectLink="<Add link to next project>"
+                nextProjectLink="/projects/<Add link to next project>"
             />
         </>
     )

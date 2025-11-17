@@ -102,6 +102,7 @@
   overflow: hidden;
   border-radius: 8px;
   display: flex;
+  max-height: 38rem;
 }
 
 /* Full width - takes up entire row */
