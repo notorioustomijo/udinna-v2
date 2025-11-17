@@ -104,7 +104,7 @@ export default function Services() {
     ];
 
     return (
-        <section className={style.serviceSection}>
+        <section className={style.serviceSection} id="services">
             <div className={style.serviceSectionHeader}>
                 <h2>Services</h2>
                 <a 

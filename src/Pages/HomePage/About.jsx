@@ -46,7 +46,7 @@ export default function About() {
 
 
     return (
-        <section className={style.aboutSection} ref={sectionRef} id="what-we-do">
+        <section className={style.aboutSection} ref={sectionRef} id="agency">
             <p
                 className={style.aboutText}
             >
